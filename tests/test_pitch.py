@@ -15,4 +15,8 @@ class TestPitch(unittest.TestCase):
         self.assertEquals(self.new_pitch.content,'Did you get that trouser on sale ... Cause its 100% off at my house')
         self.assertEquals(self.new_pitch.date_created,date(2021,6,14))
         self.assertEquals(self.new_pitch.upvotes,12)
-        self.assertEquals(self.new_pitch.downvotes,1)     
+        self.assertEquals(self.new_pitch.downvotes,1)  
+
+    def test_save_pitch(self):
+        self.new_pitch.save_pitch()
+        self.asertTrue(len(Pitch.all_pitches)>0)       
