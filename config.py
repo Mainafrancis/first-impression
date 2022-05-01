@@ -1,3 +1,4 @@
+from distutils.command.config import config
 import os
 
 class Config:
@@ -9,4 +10,14 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 
-    
+class ProdConfig(Config):
+    SQLALCHEMY_DATABASE_URL = os.environ.get("DATABASE_URL")
+
+class DevConfig(Config):
+    DEBUG = True
+
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig    
+}        
