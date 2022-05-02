@@ -1,0 +1,4 @@
+HELLO {{user.username}}
+Welcome to FirstImpression  
+You have just signed up for our application and we are pleased to have you join our family.
+Hope you find the pitches to be of help.
