@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <div class="containter">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style="border:solid; border-color:#f7f7f7; border-radius: 7.5px; border-width: 2px;">
+                <div class="container">
+                    <h1><span  class="label label-info label-default">{{ pitch.title }}</span></h1>
+                    <div class="well" style="margin-top: 3%; background: #fdfdfd;">{{pitch.content}}</div>
+                    <div class="text-right">
+                        <a href="/pitch/comment/new/{{pitch.id}}" class="text-center btn btn-primary" style="margin-bottom: 2.5%;">Add comment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+        {% if comments %}
+            {%for comment in comments%}
+            <div class="panel panel-primary">
+                <div class="panel-heading text-uppercase text-center">
+                  <h3 class="panel-title">{{comment.title}}</h3>
+                </div>
+                <div class="panel-body">
+                  {{comment.comment_content}}
+                </div>
+              </div>
+              <br>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
