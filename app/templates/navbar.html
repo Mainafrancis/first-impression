@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"> FirstImpression </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger navbar-btn">Category</button>
+                    <button type="button" class="btn btn-danger navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="/category/pickup">Pick-up Lines</a></li>
+                      <li><a href="/category/interview">Interview Pitches</a></li>
+                      <li><a href="/category/product">Product Pitches</a></li>
+                      <li><a href="/category/business">Business Pitches</a></li>
+                    </ul>
+                  </div>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              {% if current_user.is_authenticated %}
+              <li><a href="{{url_for('main.profile',uname=current_user.username)}}">{{current_user.username}}'s Profile</a></li>
+              <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+              {% else %}
+              <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+              {%endif%}
+            </ul>
+        </div>
+    </div>
+</div>
