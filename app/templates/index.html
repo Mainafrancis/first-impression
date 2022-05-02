@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center tex-primary">
+            {{title}}
+        </h1>
+        <p class="text-muted text-center">
+            This an application where you get pitches for different categories.
+        </p>
+    </div>
+
+    <hr>
+
+   <div class="container">
+        {{macro.displayPitches(pitches)}}
+   </div>
+{% endblock %}
