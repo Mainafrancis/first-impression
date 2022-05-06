@@ -21,3 +21,7 @@ BE able to get content from various categories namely :
 #### Written By [Francis Maina](https://github.com/Mainafrancis)
 
 ``` Enjoy the Program ```
+
+ MIT LICENSE 
+
+ 
