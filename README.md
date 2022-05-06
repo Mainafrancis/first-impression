@@ -24,7 +24,7 @@ BE able to get content from various categories namely :
 
  MIT License
 
-Copyright (c) 2022 [Francis Mwangi Maina] [c.h.u.i]
+Copyright (c) 2022 [Francis Mwangi Maina] 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
